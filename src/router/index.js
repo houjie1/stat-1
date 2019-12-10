@@ -3,15 +3,15 @@ import VueRouter from 'vue-router'
 import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
 import Welcome from '../components/Welcome.vue'
-import Users from '../components/user/Users.vue'
-import Rights from '../components/power/Rights.vue'
-import Roles from '../components/power/Roles.vue'
-import Cate from '../components/goods/Cate.vue'
-import Params from '../components/goods/Params.vue'
-import List from '../components/goods/List.vue'
-import Add from '../components/goods/Add.vue'
-import Order from '../components/order/Order.vue'
-import Report from '../components/report/Report.vue'
+import Shishifenxi from '../components/dingzhifenxi/Shishifenxi'
+import Dingzhibaogao from '../components/dingzhifenxi/Dingzhibaogao'
+import Yonghuqushi from '../components/yonghufenxi/Yonghuqushi'
+import Yonghuhuaxiang from '../components/yonghufenxi/Yonghuhuaxiang'
+import Huoyueyonghu from '../components/yonghufenxi/Huoyueyonghu'
+import Diyufenxi from '../components/yonghufenxi/Diyufenxi'
+import Zhongduanfenxi from '../components/yonghufenxi/Zhongduanfenxi'
+import Banbenfenxi from '../components/yonghufenxi/Banbenfenxi'
+import Shishifangke from '../components/yonghufenxi/Shishifangke'
 Vue.use(VueRouter)
 
 const routes = [
@@ -33,40 +33,40 @@ const routes = [
         component: Welcome
       },
       {
-        path: '/users',
-        component: Users
+        path: '/time',
+        component: Shishifenxi
       },
       {
-        path: '/rights',
-        component: Rights
+        path: '/port',
+        component: Dingzhibaogao
       },
       {
-        path: '/roles',
-        component: Roles
+        path: '/userqushi',
+        component: Yonghuqushi
       },
       {
-        path: '/categories',
-        component: Cate
+        path: '/huoyuq',
+        component: Huoyueyonghu
       },
       {
-        path: '/params',
-        component: Params
+        path: '/paint',
+        component: Yonghuhuaxiang
       },
       {
-        path: '/goods',
-        component: List
+        path: '/earth',
+        component: Diyufenxi
       },
       {
-        path: '/goods/add',
-        component: Add
+        path: '/tem',
+        component: Zhongduanfenxi
       },
       {
-        path: '/orders',
-        component: Order
+        path: '/banben',
+        component: Banbenfenxi
       },
       {
-        path: '/reports',
-        component: Report
+        path: '/fangke',
+        component: Shishifangke
       }
     ]
   }
@@ -76,17 +76,17 @@ const router = new VueRouter({
   routes
 })
 // 挂载路由导航守卫
-router.beforeEach((to, from, next) => {
-  // to 将要访问的路径
-  // from 代表从哪个路径跳转而来
-  // next 是一个函数，表示执行
-  // next()放行 next('/login')强制跳转
-  if (to.path === '/login') return next()
-  // 获取token
-  const tokenstr = window.sessionStorage.getItem('token')
-  if (!tokenstr) {
-    return next('/login')
-  }
-  next()
-})
+// router.beforeEach((to, from, next) => {
+//   // to 将要访问的路径
+//   // from 代表从哪个路径跳转而来
+//   // next 是一个函数，表示执行
+//   // next()放行 next('/login')强制跳转
+//   if (to.path === '/login') return next()
+//   // 获取token
+//   const tokenstr = window.sessionStorage.getItem('token')
+//   if (!tokenstr) {
+//     return next('/login')
+//   }
+//   next()
+// })
 export default router

@@ -28,3 +28,6 @@ html,body,#app{
 .ql-editor {
   min-height: 300px;
 }
+.el-menu-item,.el-submenu__title {
+  font-size: 12px;
+}

@@ -3,33 +3,33 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './plugins/element.js'
-import './plugins/quill-editor'
+// import './plugins/quill-editor'
 import './plugins/treeTable'
 // 引入全局样式表
 import './assets/css/global.css'
 
 Vue.config.productionTip = false
 // 导入 npgroress
-import NProgress from 'nprogress'
+// import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 import axios from 'axios'
 // 配置请求的根路径
-axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+// axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 // 使用 axios请求拦截器添加 token，保证拥有获取数据的权限
 // 在 request拦截器中，展示进度条
-axios.interceptors.request.use(config => {
-  // console.log(config)
-  NProgress.start()
-  config.headers.Authorization = window.sessionStorage.getItem('token')
-  // 在最后必须return config
-  return config
-})
+// axios.interceptors.request.use(config => {
+//   // console.log(config)
+//   NProgress.start()
+//   config.headers.Authorization = window.sessionStorage.getItem('token')
+//   // 在最后必须return config
+//   return config
+// })
 // 在 response拦截器中，展示进度条
-axios.interceptors.response.use(config => {
-  NProgress.done()
-  return config
-})
+// axios.interceptors.response.use(config => {
+//   NProgress.done()
+//   return config
+// })
 Vue.prototype.$http = axios
 
 Vue.filter('dateFormat', function(originVal) {
